@@ -184,7 +184,7 @@ body.debug #hitinfo{display:block}
 @media (prefers-reduced-motion:reduce){.zone .block.sl{transition:opacity .15s}.zone .block.out-l,.zone .block.out-r{transform:none}}
 .zone{touch-action:pan-y}.zone.drag{position:relative;overflow:hidden}
 .block{display:flex;flex-direction:column;gap:12px;align-items:center}
-.q{margin:0;max-width:600px;text-align:center;font:700 20px/1.2 var(--font);text-wrap:balance}
+.q{margin:0;max-width:600px;text-align:center;font:700 18px/1.2 var(--font);text-wrap:balance}
 .ans{display:flex;gap:4px}#ans{gap:var(--gap,4px)}#ans .f{height:var(--fh,44px);flex:none;transition:width .15s cubic-bezier(.2,0,0,1)}@media (prefers-reduced-motion:reduce){#ans .f{transition:none}}
 .f{width:34px;height:44px;border-radius:4px;background:var(--bg0);display:grid;place-items:center;font:700 18px/1.2 var(--font);position:relative;cursor:pointer;box-sizing:border-box}
 .f.cur{background:var(--gelb);color:#000;box-shadow:inset 0 0 0 2px #000,inset 0 -5px 0 rgba(0,0,0,.25)}
@@ -290,9 +290,9 @@ body.nolupe .key[data-ch].down{transform:scale(.96)}
 .lcol{flex:1;min-width:0;display:flex;flex-direction:column}
 .tabq .karte{position:relative;flex:1;min-height:0}
 .tabq .ein{position:relative;border:0;z-index:auto}
-.tabq .ein{margin-top:16px;background:var(--bg10);border-radius:6px;padding:0 16px 16px}.tabq .zone{margin-top:0;padding:12px 0 0;gap:12px;background:none;border-radius:0}
+.tabq .ein{margin-top:16px;background:var(--bg10);border-radius:6px;padding:0 16px 16px}.tabq .zone{margin-top:0;padding:16px 0 0;gap:16px;background:none;border-radius:0}
 .tabq .oben{height:34px}.tabq .rk{width:34px;height:34px}.tabq .pill,.tabq .tk{height:34px}
-.tabq .q{font-size:20px;min-height:0}.tabq .f:not(.cur):not(.ok):not(.err){background:var(--bg20)}.tabq .block{gap:8px}
+.tabq .q{font-size:18px;min-height:0}.tabq .f:not(.cur):not(.ok):not(.err){background:var(--bg20)}.tabq .block{gap:8px}
 .tabq .kh{background:none;padding:16px 0 0}
 .tabq .kb{column-gap:5px;row-gap:5px}
 .tabq .key{height:40px;font-size:16px}
@@ -304,7 +304,7 @@ body.nolupe .key[data-ch].down{transform:scale(.96)}
 .tabq .after{padding:32px 24px 0}
 /* Desktop */
 .desk .qrow{padding:0 274px;gap:32px;bottom:auto;height:auto;align-items:flex-start}
-.desk .lcol{flex:0 0 520px}.desk .q{font-size:20px}.desk .pill,.desk .tk{font-size:16px}.desk .tk svg{width:16px;height:16px}.desk .karte{position:relative;flex:none}
+.desk .lcol{flex:0 0 520px}.desk .q{font-size:18px}.desk .pill,.desk .tk{font-size:16px}.desk .tk svg{width:16px;height:16px}.desk .karte{position:relative;flex:none}
 .desk .ein{position:relative;background:none;border:0;box-shadow:none;border-radius:0;z-index:auto}
 .desk .qrow.nolist .zone{width:660px;margin-left:auto;margin-right:auto;box-sizing:border-box}.desk .zone{margin-top:50px;padding:16px;background:var(--bg10);border:0;border-radius:6px;gap:12px}.desk .khint{margin-top:8px}.desk .zbtn{right:0}.desk .pbtn{left:8px}
 .desk .panel{width:340px;height:520px;box-sizing:border-box}
@@ -888,7 +888,7 @@ const ENTSCHEIDUNGEN=[
 ["17.11.","Listenfelder in genau drei Größen: 16 × 20, 20 × 24, 24 × 28. Handy 16 × 20, aktiv 20 × 24; Tablet und Desktop 20 × 24, aktiv 24 × 28. Richtig: Feld in Hintergrundfarbe mit grünem Rahmen, Haken im Feld unten rechts. Falsch: 8 % Rot, roter Rahmen, durchgehender Durchstrich hinter dem Buchstaben; nichts ragt über das Feld.","Eine Größenskala für alle Geräte; die Marken überlappen keine Nachbarfelder mehr."],
 ["17.11.","Desktop: Raster 892 px ohne und 520 px mit Fragenliste, Fragekarte 660 px bzw. so breit wie die Rasterspalte; Zoom-Pille rechts in der Leiste unter dem Raster wie am Tablet; 8 px zwischen Fragekarte und Tastenkürzeln. Revidiert „keine Zoom-Pille“ vom 28.10.","Zoom ist am Desktop sichtbar und an derselben Stelle wie am Tablet; die Tastenkürzel gehören zur Karte."],
 ["17.11.","Tablet quer: Fragenliste mit einem 1-px-Rahmen, ohne Schatten.","Die Liste liegt in der Fläche und schwebt nicht darüber."],
-["17.11.","Idee „Mitspieler“ verworfen.","Wird nicht weiterverfolgt."]];
+["17.11.","Idee „Mitspieler“ verworfen.","Wird nicht weiterverfolgt."],["17.11.","Frage auf Tablet und Desktop in 18 statt 20 px; Tablet quer mit 16 px Abständen in der Fragekarte.","Angleich an die Figma-Komponente „Eingabebereich“."]];
 const DEVINFO=[
 ["Layouts je Gerät",`<ul><li><b>Handy hoch:</b> Raster oben, Fragekarte und eigene Tastatur unten. Fragenliste als Sheet (Taste „Liste“).</li><li><b>Handy quer:</b> Hinweis „Bitte drehen“, Spielstand bleibt.</li><li><b>Tablet hoch:</b> wie Handy, Tasten 56 px.</li><li><b>Tablet quer und Desktop:</b> Schalter „Fragen“ in der Navigation (Standard aus). Desktop nach Figma „alte welt“: Inhaltsspalte 892 px (274–1166 bei 1440). Aus: Raster 892 × 545, Fragekarte 660 px mittig darunter. An: Raster 520 px und Liste 340 px rechts (Abstand 32). Die Spielfeld-Box bleibt in beiden Zuständen gleich hoch – mit Liste sitzt das kleinere Raster mittig darin, die Karte bleibt stehen.</li><li><b>Prüfen:</b> Tablet und Desktop in der Navigation (links neben „Fragen“), Handy in der Fragekarte (Schalter neben der Nummern-Pille, entschieden 13.11.).</li><li><b>Desktop:</b> Hardware-Tastatur – Buchstaben, Tab = nächste Frage, Leertaste = Richtung, Rücktaste = löschen. Druck-Knopf in der Leiste öffnet „Als PDF herunterladen“.</li></ul>`],
 ["Spielfeld mitwachsen (Handy)",`<ul><li><b>Zone 1, 0–50 px Scroll:</b> der ZEIT-Kopf scrollt 1:1 weg, das Spielfeld wächst um dieselbe Höhe, die Tastatur bleibt unten stehen.</li><li><b>Einrasten:</b> nie halb. Beim Loslassen entscheidet das Tempo (über 0,25 px/ms nach Richtung), sonst reichen 12 px Weg. Zielzustände: Seite (0) oder Spiel (50).</li><li><b>Zone 2:</b> zäher Übergang zu den Inhalten darunter – 140 px Fingerweg mit Faktor 0,3. Darunter federt es zurück auf „Spiel“, darüber scrollt es frei mit Schwung.</li><li>Tippen und „Weiterspielen“ holen in den Spiel-Zustand zurück. Abschaltbar unter Einstellungen („Spielfeld mitwachsen“, Standard an).</li><li>Nicht auf dem Tablet: das Raster ist dort breitenbegrenzt, mehr Höhe brächte nur Leerraum.</li></ul>`],
